@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🏍️ Trip Moto 4 Jours — Juin 2026</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f0f2f5;
+      color: #222;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+      color: white;
+      text-align: center;
+      padding: 48px 20px 40px;
+    }
+    header .emoji { font-size: 52px; display: block; margin-bottom: 12px; }
+    header h1 { font-size: 2.2em; font-weight: 700; letter-spacing: 1px; }
+    header .subtitle { margin-top: 10px; font-size: 1.1em; color: #a0c4ff; }
+    header .dates {
+      display: inline-block;
+      margin-top: 16px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 24px;
+      padding: 8px 24px;
+      font-size: 1em;
+      color: #e0e0e0;
+    }
+
+    /* RÉSUMÉ CHIFFRES */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      background: #0f3460;
+      flex-wrap: wrap;
+    }
+    .stat {
+      padding: 20px 32px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    .stat:last-child { border-right: none; }
+    .stat .val { font-size: 1.8em; font-weight: 700; color: #f9c74f; }
+    .stat .lbl { font-size: 0.78em; color: #a0c4ff; margin-top: 2px; text-transform: uppercase; letter-spacing: 1px; }
+
+    /* CONTAINER */
+    .container { max-width: 960px; margin: 0 auto; padding: 40px 20px 60px; }
+
+    /* INTRO */
+    .intro {
+      background: white;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 32px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.07);
+      line-height: 1.7;
+      font-size: 1.02em;
+    }
+    .intro strong { color: #0f3460; }
+
+    /* CARTES JOUR */
+    .jour {
+      background: white;
+      border-radius: 12px;
+      margin-bottom: 28px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.07);
+      overflow: hidden;
+    }
+    .jour-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 24px;
+      border-left: 6px solid #E67E22;
+    }
+    .jour:nth-child(2) .jour-header { border-color: #27AE60; }
+    .jour:nth-child(3) .jour-header { border-color: #2980B9; }
+    .jour:nth-child(4) .jour-header { border-color: #8E44AD; }
+    .jour:nth-child(5) .jour-header { border-color: #C0392B; }
+
+    .jour-num {
+      background: #E67E22;
+      color: white;
+      font-weight: 700;
+      font-size: 1.3em;
+      border-radius: 50%;
+      width: 48px; height: 48px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .jour:nth-child(2) .jour-num { background: #27AE60; }
+    .jour:nth-child(3) .jour-num { background: #2980B9; }
+    .jour:nth-child(4) .jour-num { background: #8E44AD; }
+    .jour:nth-child(5) .jour-num { background: #C0392B; }
+
+    .jour-title h2 { font-size: 1.2em; color: #1a1a2e; }
+    .jour-title .date { font-size: 0.85em; color: #888; margin-top: 2px; }
+
+    .jour-body { padding: 0 24px 24px; }
+
+    .trajet {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin: 4px 0 16px;
+      font-size: 0.93em;
+      color: #444;
+      line-height: 1.6;
+    }
+    .trajet .arrow { color: #aaa; margin: 0 4px; }
+
+    .infos {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #eef2ff;
+      color: #3a4a8a;
+      border-radius: 20px;
+      padding: 5px 12px;
+      font-size: 0.83em;
+      font-weight: 600;
+    }
+
+    .points-forts {
+      margin-bottom: 20px;
+    }
+    .points-forts h4 {
+      font-size: 0.82em;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #888;
+      margin-bottom: 10px;
+    }
+    .poi-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .poi {
+      background: #fff8f0;
+      border: 1px solid #ffe0b2;
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 0.88em;
+      color: #555;
+    }
+
+    /* BOUTONS */
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-size: 0.88em;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: opacity .15s;
+    }
+    .btn:hover { opacity: 0.85; }
+    .btn-map {
+      background: #0f3460;
+      color: white;
+    }
+    .btn-gpx {
+      background: #E67E22;
+      color: white;
+    }
+    .btn-gpx-green { background: #27AE60; color: white; }
+    .btn-gpx-blue  { background: #2980B9; color: white; }
+
+    /* SECTION GPX GUIDE */
+    .gpx-guide {
+      background: white;
+      border-radius: 12px;
+      padding: 28px;
+      margin-top: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.07);
+    }
+    .gpx-guide h3 {
+      font-size: 1.1em;
+      margin-bottom: 18px;
+      color: #1a1a2e;
+    }
+    .apps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .app-card {
+      border: 1px solid #e8e8e8;
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .app-card .app-name { font-weight: 700; font-size: 0.95em; margin-bottom: 8px; }
+    .app-card ol { padding-left: 18px; font-size: 0.83em; color: #555; line-height: 1.7; }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.82em;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <span class="emoji">🏍️</span>
+  <h1>Trip Moto 4 Jours</h1>
+  <div class="subtitle">Lascelle → Aubrac → Rodez → Saint-Cyr-la-Roche</div>
+  <div class="dates">📅 Lundi 22 – Jeudi 25 juin 2026</div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="val">4</div><div class="lbl">Jours</div></div>
+  <div class="stat"><div class="val">4</div><div class="lbl">Motos</div></div>
+  <div class="stat"><div class="val">~960</div><div class="lbl">km au total</div></div>
+  <div class="stat"><div class="val">~16h</div><div class="lbl">de route</div></div>
+  <div class="stat"><div class="val">228m → 1 375m</div><div class="lbl">dénivelé</div></div>
+</div>
+
+<div class="container">
+
+  <div class="intro">
+    Quatre jours de route à travers le <strong>Cantal</strong>, l'<strong>Aubrac</strong>, l'<strong>Aveyron</strong> et le <strong>Quercy</strong> avant de rentrer en Corrèze. Itinéraire optimisé pour les virages, les panoramas et les villages médiévaux — zéro autoroute, zéro doublon. Les fichiers GPX sont disponibles en téléchargement pour chaque jour.
+  </div>
+
+  <!-- J1 -->
+  <div class="jour">
+    <div class="jour-header">
+      <div class="jour-num">J1</div>
+      <div class="jour-title">
+        <h2>Saint-Cyr-la-Roche / Mions → Lascelle</h2>
+        <div class="date">Lundi 22 juin 2026</div>
+      </div>
+    </div>
+    <div class="jour-body">
+      <div class="trajet">
+        <strong>Groupe Brive :</strong> Saint-Cyr-la-Roche <span class="arrow">→</span> Argentat <span class="arrow">→</span> Mauriac <span class="arrow">→</span> Saint-Nectaire (192 km)<br>
+        <strong>Groupe Mions :</strong> Mions <span class="arrow">→</span> Issoire <span class="arrow">→</span> Plateau du Cézallier <span class="arrow">→</span> Saint-Nectaire (239 km)<br>
+        <strong>Après-midi commun :</strong> Saint-Nectaire <span class="arrow">→</span> Puy Mary <span class="arrow">→</span> Col du Pas de Peyrol <span class="arrow">→</span> Gorges de la Rhue <span class="arrow">→</span> Lascelle (133 km)
+      </div>
+      <div class="infos">
+        <span class="badge">⏰ Départ 8h00</span>
+        <span class="badge">🍽️ Jonction Saint-Nectaire ~11h30</span>
+        <span class="badge">🏕️ Bivouac Lascelle ~16h30</span>
+        <span class="badge">📏 192–239 km le matin</span>
+      </div>
+      <div class="points-forts">
+        <h4>Points forts</h4>
+        <div class="poi-list">
+          <span class="poi">⛰️ Puy Mary (1 787 m)</span>
+          <span class="poi">🏔️ Col du Pas de Peyrol</span>
+          <span class="poi">🌊 Gorges de la Rhue</span>
+          <span class="poi">💧 Lac des Graves</span>
+          <span class="poi">🧀 Saint-Nectaire</span>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn btn-map" href="J1/J1_carte.html" target="_blank">🗺️ Voir la carte</a>
+        <a class="btn btn-gpx" href="J1/J1_Brive_StNectaire.gpx" download>⬇️ GPX Brive (192 km)</a>
+        <a class="btn btn-gpx-green" href="J1/J1_Mions_StNectaire.gpx" download>⬇️ GPX Mions (239 km)</a>
+        <a class="btn btn-gpx-blue" href="J1/J1_APM_StNectaire_LacDesGraves.gpx" download>⬇️ GPX APM commun (133 km)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- J2 -->
+  <div class="jour">
+    <div class="jour-header">
+      <div class="jour-num">J2</div>
+      <div class="jour-title">
+        <h2>Lascelle → Laguiole</h2>
+        <div class="date">Mardi 23 juin 2026</div>
+      </div>
+    </div>
+    <div class="jour-body">
+      <div class="trajet">
+        Lascelle <span class="arrow">→</span> Murat <span class="arrow">→</span> Col de Prat de Bouc <span class="arrow">→</span> Vallée de Brezons <span class="arrow">→</span> Chaudes-Aigues <span class="arrow">→</span> Gorges de la Truyère (D13) <span class="arrow">→</span> Viaduc de Garabit <span class="arrow">→</span> Mur-de-Barrez <span class="arrow">→</span> Laguiole
+      </div>
+      <div class="infos">
+        <span class="badge">⏰ Départ 9h00</span>
+        <span class="badge">🍽️ Déjeuner Chaudes-Aigues ~11h30</span>
+        <span class="badge">🏕️ Bivouac Laguiole ~17h00</span>
+        <span class="badge">📏 229 km</span>
+        <span class="badge">🏔️ 643m → 1 246m</span>
+      </div>
+      <div class="points-forts">
+        <h4>Points forts</h4>
+        <div class="poi-list">
+          <span class="poi">⛰️ Col de Prat de Bouc</span>
+          <span class="poi">🏘️ Vallée de Brezons</span>
+          <span class="poi">♨️ Chaudes-Aigues 82°C</span>
+          <span class="poi">🌊 Gorges de la Truyère D13</span>
+          <span class="poi">🌉 Viaduc de Garabit (Eiffel 1888)</span>
+          <span class="poi">🏘️ Mur-de-Barrez</span>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn btn-map" href="J2/J2_carte.html" target="_blank">🗺️ Voir la carte</a>
+        <a class="btn btn-gpx" href="J2/J2_Lascelle_Laguiole_v2.gpx" download>⬇️ GPX J2 (229 km)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- J3 -->
+  <div class="jour">
+    <div class="jour-header">
+      <div class="jour-num">J3</div>
+      <div class="jour-title">
+        <h2>Laguiole → Rodez</h2>
+        <div class="date">Mercredi 24 juin 2026</div>
+      </div>
+    </div>
+    <div class="jour-body">
+      <div class="trajet">
+        Laguiole <span class="arrow">→</span> D19 descente Aubrac <span class="arrow">→</span> Sainte-Eulalie-d'Olt <span class="arrow">→</span> Espalion <span class="arrow">→</span> Estaing <span class="arrow">→</span> Entraygues-sur-Truyère <span class="arrow">→</span> Conques <span class="arrow">→</span> Marcillac-Vallon <span class="arrow">→</span> Salles-la-Source <span class="arrow">→</span> Bozouls <span class="arrow">→</span> Rodez
+      </div>
+      <div class="infos">
+        <span class="badge">⏰ Départ 9h00</span>
+        <span class="badge">🍽️ Déjeuner Entraygues ~12h30</span>
+        <span class="badge">🏕️ Bivouac Rodez ~17h00</span>
+        <span class="badge">📏 248,7 km</span>
+        <span class="badge">🏔️ 228m → 1 375m</span>
+      </div>
+      <div class="points-forts">
+        <h4>Points forts</h4>
+        <div class="poi-list">
+          <span class="poi">🏔️ D19 — descente Aubrac</span>
+          <span class="poi">🏘️ Sainte-Eulalie-d'Olt</span>
+          <span class="poi">🏰 Estaing</span>
+          <span class="poi">🏘️ Espalion</span>
+          <span class="poi">⛪ Conques (abbatiale XIe)</span>
+          <span class="poi">🍷 Marcillac-Vallon AOC</span>
+          <span class="poi">🕳️ Bozouls canyon 100m</span>
+          <span class="poi">💦 Salles-la-Source cascade</span>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn btn-map" href="J3/J3_carte.html" target="_blank">🗺️ Voir la carte</a>
+        <a class="btn btn-gpx" href="J3/J3_Laguiole_Rodez_track.gpx" download>⬇️ GPX J3 (248,7 km)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- J4 -->
+  <div class="jour">
+    <div class="jour-header">
+      <div class="jour-num">J4</div>
+      <div class="jour-title">
+        <h2>Rodez → Saint-Cyr-la-Roche</h2>
+        <div class="date">Jeudi 25 juin 2026</div>
+      </div>
+    </div>
+    <div class="jour-body">
+      <div class="trajet">
+        Rodez <span class="arrow">→</span> Villefranche-de-Rouergue <span class="arrow">→</span> Figeac <span class="arrow">→</span> Lacapelle-Marival <span class="arrow">→</span> Saint-Céré <span class="arrow">→</span> Martel <span class="arrow">→</span> Saint-Cyr-la-Roche
+      </div>
+      <div class="infos">
+        <span class="badge">⏰ Départ 9h00</span>
+        <span class="badge">🍽️ Déjeuner Figeac ~12h00</span>
+        <span class="badge">🏠 Retour Saint-Cyr ~17h00</span>
+        <span class="badge">📏 240,4 km</span>
+        <span class="badge">🏔️ 96m → 656m</span>
+      </div>
+      <div class="points-forts">
+        <h4>Points forts</h4>
+        <div class="poi-list">
+          <span class="poi">🏰 Villefranche-de-Rouergue</span>
+          <span class="poi">🏛️ Figeac (Champollion)</span>
+          <span class="poi">🏯 Lacapelle-Marival</span>
+          <span class="poi">🏘️ Saint-Céré</span>
+          <span class="poi">🗼 Martel — cité des 7 tours</span>
+          <span class="poi">🏠 Retour à la maison !</span>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn btn-map" href="J4/J4_carte.html" target="_blank">🗺️ Voir la carte</a>
+        <a class="btn btn-gpx" href="J4/J4_Rodez_StCyrLaRoche_waypoints.gpx" download>⬇️ GPX J4 (240,4 km)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- GUIDE GPX -->
+  <div class="gpx-guide">
+    <h3>📲 Comment installer un fichier GPX sur votre appli ?</h3>
+    <div class="apps">
+      <div class="app-card">
+        <div class="app-name">📱 Kurviger (recommandé)</div>
+        <ol>
+          <li>Télécharger le fichier GPX</li>
+          <li>Ouvrir Kurviger</li>
+          <li>Menu → Importer → sélectionner le fichier</li>
+          <li>Lancer la navigation</li>
+        </ol>
+      </div>
+      <div class="app-card">
+        <div class="app-name">📱 Google Maps</div>
+        <ol>
+          <li>Télécharger le fichier GPX</li>
+          <li>Ouvrir Google Maps sur PC</li>
+          <li>Menu → Vos trajets → Importer</li>
+          <li>Partager vers votre téléphone</li>
+        </ol>
+      </div>
+      <div class="app-card">
+        <div class="app-name">🗺️ GPS Garmin / TomTom</div>
+        <ol>
+          <li>Télécharger le fichier GPX</li>
+          <li>Connecter le GPS en USB</li>
+          <li>Copier dans le dossier GPX</li>
+          <li>Éjecter et lancer sur le GPS</li>
+        </ol>
+      </div>
+      <div class="app-card">
+        <div class="app-name">📱 Maps.me / OsmAnd</div>
+        <ol>
+          <li>Télécharger le fichier GPX</li>
+          <li>Ouvrir le fichier depuis les téléchargements</li>
+          <li>Choisir "Ouvrir avec Maps.me"</li>
+          <li>Le tracé s'importe automatiquement</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  Trip Moto 4 Jours — Juin 2026 · Lascelle · Aubrac · Aveyron · Quercy · Corrèze
+</footer>
+
+</body>
+</html>
