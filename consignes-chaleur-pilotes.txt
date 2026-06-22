@@ -1,0 +1,106 @@
+CONSIGNES DE SÉCURITÉ — VOL PAR FORTE CHALEUR
+Pilotes privés — Avions légers & ULM — Été 2026
+================================================
+
+Entre 11h et 16h par canicule : vol fortement déconseillé.
+Volez tôt le matin ou en soirée — thermiques violents, performances dégradées, risques cumulés.
+
+
+═══════════════════════════════════════════════════════
+PARTIE 1 — PERFORMANCES AVION (Altitude-densité & moteur)
+═══════════════════════════════════════════════════════
+
+› Calculez l'altitude-densité avant le vol :
+  +10°C au-dessus ISA ≈ +600 ft d'altitude-densité.
+  Exemple : 500 ft MSL, 38°C dehors → altitude-densité réelle ≈ 2 500 ft.
+
+› Distance de décollage : × 1,5 MINIMUM en conditions chaudes.
+  Ne négociez pas avec la piste.
+
+› Taux de montée : −20 à −40 %. Anticipez les obstacles en bout de piste.
+
+› Allégez l'avion : viser 85–90 % de la MTOW.
+  Ne faites pas le plein complet si la piste est courte.
+
+› Moteur atmosphérique : appauvrissez le mélange au décollage
+  si altitude-densité > 3 000 ft (cf. manuel de vol).
+
+› Météo : consultez les bulletins Météo-France
+  (vigilance jaune/orange/rouge) et le TEMSI avant chaque départ.
+  Thermiques violents possibles, orages convectifs rapides en canicule.
+
+
+═══════════════════════════════════════════════════════
+PARTIE 2 — SANTÉ DU PILOTE (Déshydratation & hyperthermie)
+═══════════════════════════════════════════════════════
+
+› Hydratation obligatoire :
+  500 mL AVANT le vol + 1 L d'eau par heure de vol.
+  Boire toutes les 20–30 min sans attendre la soif.
+
+› Déshydratation dès −2 % du poids corporel en eau :
+  prise de décision dégradée, temps de réaction allongé — sans s'en rendre compte.
+
+› Signes du coup de chaleur (URGENCE médicale) :
+  peau rouge et SÈCHE (absence de transpiration), confusion mentale,
+  vertiges, pouls rapide → atterrissage immédiat.
+
+› Éviter absolument :
+  - Alcool (veille ET jour J)
+  - Café en excès avant le vol
+  - Repas lourd avant le vol
+
+› S'habiller léger : coton, couleurs claires, casquette, lunettes de soleil.
+  Aérer la cabine quelques minutes avant d'embarquer.
+
+› Appliquer I'M SAFE honnêtement :
+  la chaleur nocturne perturbe le sommeil → performances dégradées dès le lendemain.
+
+
+═══════════════════════════════════════════════════════
+PARTIE 3 — IPAD & TABLETTES EFB (Surchauffe & panne en vol)
+═══════════════════════════════════════════════════════
+
+› Limite opérationnelle Apple/Android : 0 à 35°C.
+  Un cockpit fermé au soleil atteint 60–80°C en stationnement.
+
+› Ne JAMAIS laisser l'appareil dans l'avion fermé au soleil :
+  dommages définitifs de batterie garantis.
+
+› En vol : monter l'iPad côté ombragé du cockpit.
+  Éviter le tableau de bord (surface chaude + rayonnement direct).
+
+› Ne pas charger en vol si température déjà élevée :
+  la charge génère de la chaleur supplémentaire → extinction accélérée.
+
+› Message "Température — appareil a besoin de se refroidir" =
+  extinction imminente SANS avertissement supplémentaire.
+
+› BACKUP OBLIGATOIRE :
+  Carte papier de la région + trajet mémorisé + fréquences radio notées.
+  Un EFB n'est PAS un instrument de navigation certifié.
+
+
+═══════════════════════════════════════════════════════
+LES 5 RÉFLEXES ESSENTIELS
+═══════════════════════════════════════════════════════
+
+1. VOLEZ TÔT OU TARD
+   Avant 10h ou après 18h. Entre 11h–16h : report ou annulation.
+
+2. CALCULEZ LES PERFORMANCES
+   Altitude-densité + tableaux du manuel à la température réelle du jour.
+
+3. ALLÉGEZ & RALLONGEZ
+   Moins de carburant / masse. Distance de décollage × 1,5 minimum.
+
+4. HYDRATEZ-VOUS
+   1 L/heure en vol. Fatigue ou maux de tête = posez l'avion.
+
+5. BACKUP PAPIER
+   Votre tablette peut s'éteindre. Carte & fréquences toujours notées.
+
+
+═══════════════════════════════════════════════════════
+Sources : FFPLUM Flash Sécurité Chaleurs · FFA Mémo Pilote VFR 2025-2026
+FAA P-8740-02 Density Altitude · AOPA · SKYbrary · iPad Pilot News
