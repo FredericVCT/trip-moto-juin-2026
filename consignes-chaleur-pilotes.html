@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consignes Fortes Chaleurs — Pilotes Avion Léger</title>
+<style>
+  @page {
+    size: A4;
+    margin: 14mm 14mm 12mm 14mm;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 8.5pt;
+    color: #1a1a2e;
+    background: #fff;
+    width: 182mm;
+    min-height: 267mm;
+  }
+
+  /* ── HEADER ── */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid #1a3a6e;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+  }
+
+  header .title-block h1 {
+    font-size: 14pt;
+    font-weight: 800;
+    color: #1a3a6e;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  header .title-block h2 {
+    font-size: 8.5pt;
+    font-weight: 400;
+    color: #555;
+    margin-top: 2px;
+  }
+
+  header .badge {
+    background: #1a3a6e;
+    color: #fff;
+    font-size: 7pt;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  /* ── 3 COLUMNS ── */
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .col {
+    border: 1px solid #d0d8e8;
+    border-top: 4px solid #1a3a6e;
+    border-radius: 3px;
+    padding: 8px 9px;
+  }
+
+  .col.perf  { border-top-color: #1a3a6e; }
+  .col.sante { border-top-color: #2a6e1a; }
+  .col.tech  { border-top-color: #6e3a1a; }
+
+  .col-header {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 7px;
+  }
+
+  .col-header .icon {
+    font-size: 13pt;
+    line-height: 1;
+  }
+
+  .col-header h3 {
+    font-size: 8.5pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: #1a1a2e;
+  }
+
+  .col-header h3 span {
+    display: block;
+    font-weight: 400;
+    font-size: 7pt;
+    text-transform: none;
+    color: #666;
+    letter-spacing: 0;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  ul li {
+    padding: 3.5px 0 3.5px 12px;
+    position: relative;
+    line-height: 1.35;
+    border-bottom: 1px dotted #e0e6f0;
+    color: #222;
+  }
+
+  ul li:last-child { border-bottom: none; }
+
+  ul li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    color: #1a3a6e;
+  }
+
+  .col.sante ul li::before { color: #2a6e1a; }
+  .col.tech  ul li::before { color: #6e3a1a; }
+
+  li strong {
+    font-weight: 700;
+    color: #1a1a2e;
+  }
+
+  li .warn {
+    font-weight: 700;
+    color: #c0392b;
+  }
+
+  li .ok {
+    font-weight: 700;
+    color: #27ae60;
+  }
+
+  /* ── ALERTE BOX ── */
+  .alert-box {
+    background: #fff8e1;
+    border: 1px solid #f0c040;
+    border-left: 4px solid #e67e22;
+    border-radius: 3px;
+    padding: 6px 10px;
+    margin-bottom: 10px;
+    font-size: 7.8pt;
+    color: #5a3e00;
+  }
+
+  .alert-box strong { font-weight: 800; }
+
+  /* ── GOLDEN RULES ── */
+  .golden {
+    background: #1a3a6e;
+    color: #fff;
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin-bottom: 0;
+  }
+
+  .golden h4 {
+    font-size: 8pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 6px;
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+    padding-bottom: 4px;
+  }
+
+  .rules-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+  }
+
+  .rule {
+    font-size: 7.2pt;
+    line-height: 1.35;
+    color: #dce6f7;
+  }
+
+  .rule .num {
+    display: block;
+    font-size: 14pt;
+    font-weight: 900;
+    color: rgba(255,255,255,0.18);
+    line-height: 1;
+    margin-bottom: 2px;
+  }
+
+  .rule strong {
+    display: block;
+    font-size: 7.5pt;
+    color: #fff;
+    margin-bottom: 2px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    margin-top: 7px;
+    text-align: center;
+    font-size: 6.5pt;
+    color: #aaa;
+  }
+
+  footer a { color: #aaa; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="title-block">
+    <h1>⚠ Consignes de sécurité — Fortes chaleurs</h1>
+    <h2>Pilotes privés &nbsp;·&nbsp; Avions légers &amp; ULM &nbsp;·&nbsp; Été 2026</h2>
+  </div>
+  <div class="badge">DOCUMENT<br>SÉCURITÉ VOLS</div>
+</header>
+
+<!-- ALERT -->
+<div class="alert-box">
+  <strong>Entre 11h et 16h par canicule : vol fortement déconseillé.</strong>
+  Volez tôt le matin ou en soirée — thermiques violents, performances dégradées, risques cumulés.
+</div>
+
+<!-- 3 COLUMNS -->
+<div class="columns">
+
+  <!-- COL 1 : PERFORMANCES -->
+  <div class="col perf">
+    <div class="col-header">
+      <span class="icon">✈</span>
+      <h3>Performances avion<span>Altitude-densité &amp; moteur</span></h3>
+    </div>
+    <ul>
+      <li><strong>Calculez l'altitude-densité</strong> avant le vol : +10°C au-dessus ISA ≈ <strong>+600 ft</strong> d'altitude-densité.</li>
+      <li>Distance de décollage : <span class="warn">× 1,5 minimum</span> en conditions chaudes. Ne négociez pas avec la piste.</li>
+      <li>Taux de montée : <span class="warn">−20 à −40 %</span>. Anticipez les obstacles en bout de piste.</li>
+      <li>Allégez l'avion : <span class="ok">viser 85–90 % de la MTOW</span>. Ne faites pas le plein complet.</li>
+      <li>Moteur atmo : <strong>appauvrissez le mélange au décollage</strong> si altitude-densité &gt; 3 000 ft (cf. manuel de vol).</li>
+      <li>Météo : consultez les <strong>bulletins Météo-France</strong> (vigilance ⚠ jaune/orange/rouge) et le TEMSI avant chaque départ.</li>
+    </ul>
+  </div>
+
+  <!-- COL 2 : SANTÉ -->
+  <div class="col sante">
+    <div class="col-header">
+      <span class="icon">🧍</span>
+      <h3>Santé du pilote<span>Déshydratation &amp; hyperthermie</span></h3>
+    </div>
+    <ul>
+      <li><strong>Hydratation obligatoire :</strong> 500 mL <em>avant</em> le vol + <span class="warn">1 L d'eau par heure</span> de vol. Boire toutes les 20–30 min sans attendre la soif.</li>
+      <li>Déshydratation dès <span class="warn">−2 % du poids</span> en eau : prise de décision dégradée, temps de réaction allongé.</li>
+      <li><strong>Signes du coup de chaleur</strong> (urgence) : peau rouge et sèche, confusion, vertiges, absence de transpiration → <span class="warn">atterrissage immédiat.</span></li>
+      <li>Éviter : alcool (veille &amp; jour J), café en excès, repas lourd avant le vol.</li>
+      <li>S'habiller léger (coton, couleurs claires), casquette, lunettes de soleil. Aérer la cabine avant d'embarquer.</li>
+      <li>Appliquer <strong>I'M SAFE</strong> honnêtement — la chaleur nocturne perturbe le sommeil et affecte les performances dès le lendemain.</li>
+    </ul>
+  </div>
+
+  <!-- COL 3 : TABLETTES -->
+  <div class="col tech">
+    <div class="col-header">
+      <span class="icon">📱</span>
+      <h3>iPad &amp; tablettes EFB<span>Surchauffe &amp; panne en vol</span></h3>
+    </div>
+    <ul>
+      <li>Limite opérationnelle Apple/Android : <span class="warn">0 à 35°C</span>. Un cockpit fermé au soleil atteint <strong>60–80°C</strong> en stationnement.</li>
+      <li><strong>Ne jamais laisser l'appareil dans l'avion</strong> fermé au soleil — dommages définitifs de batterie garantis.</li>
+      <li>En vol : monter l'iPad côté <span class="ok">ombragé</span> du cockpit, éviter le tableau de bord (surface chaude + rayonnement).</li>
+      <li>Ne pas charger en vol si la température est déjà élevée — la charge génère de la chaleur supplémentaire.</li>
+      <li>Message <em>"Température — appareil a besoin de se refroidir"</em> = <span class="warn">extinction imminente.</span></li>
+      <li><strong>Backup obligatoire :</strong> carte papier de la région + trajet mémorisé + fréquences radio notées. Un EFB n'est pas un instrument certifié.</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- GOLDEN RULES -->
+<div class="golden">
+  <h4>★ Les 5 réflexes essentiels</h4>
+  <div class="rules-grid">
+    <div class="rule">
+      <span class="num">1</span>
+      <strong>Volez tôt ou tard</strong>
+      Avant 10h ou après 18h. Entre 11h–16h : report ou annulation.
+    </div>
+    <div class="rule">
+      <span class="num">2</span>
+      <strong>Calculez les performances</strong>
+      Altitude-densité + tableaux du manuel à la température réelle du jour.
+    </div>
+    <div class="rule">
+      <span class="num">3</span>
+      <strong>Allégez &amp; rallongez</strong>
+      Moins de carburant / masse, piste × 1,5 minimum.
+    </div>
+    <div class="rule">
+      <span class="num">4</span>
+      <strong>Hydratez-vous</strong>
+      1 L/heure en vol. Toute fatigue ou maux de tête = posez l'avion.
+    </div>
+    <div class="rule">
+      <span class="num">5</span>
+      <strong>Backup papier</strong>
+      Votre tablette peut s'éteindre. Ayez toujours carte &amp; fréquences notées.
+    </div>
+  </div>
+</div>
+
+<footer>
+  Sources : FFPLUM Flash Sécurité Chaleurs · FFA Mémo Pilote VFR 2025-2026 · FAA P-8740-02 Density Altitude · AOPA · SKYbrary · iPad Pilot News
+</footer>
+
+</body>
+</html>
