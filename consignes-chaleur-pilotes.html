@@ -2,186 +2,211 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Consignes Fortes Chaleurs — Pilotes Avion Léger</title>
+<title>Consignes Fortes Chaleurs — Aéro-Club de Brive</title>
 <style>
-  @page {
-    size: A4;
-    margin: 14mm 14mm 12mm 14mm;
-  }
+  @page { size: A4; margin: 11mm 13mm 9mm 13mm; }
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 8.5pt;
-    color: #1a1a2e;
+    font-size: 8.1pt;
+    color: #1c1c2e;
     background: #fff;
-    width: 182mm;
-    min-height: 267mm;
+    width: 184mm;
   }
 
-  /* ── HEADER ── */
+  /* ══ HEADER ══ */
   header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    border-bottom: 3px solid #1a3a6e;
-    padding-bottom: 6px;
-    margin-bottom: 10px;
-  }
-
-  header .title-block h1 {
-    font-size: 14pt;
-    font-weight: 800;
-    color: #1a3a6e;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-  }
-
-  header .title-block h2 {
-    font-size: 8.5pt;
-    font-weight: 400;
-    color: #555;
-    margin-top: 2px;
-  }
-
-  header .badge {
-    background: #1a3a6e;
-    color: #fff;
-    font-size: 7pt;
-    font-weight: 700;
-    padding: 4px 10px;
-    border-radius: 3px;
-    text-align: center;
-    line-height: 1.5;
-  }
-
-  /* ── 3 COLUMNS ── */
-  .columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 8px;
-    margin-bottom: 10px;
-  }
-
-  .col {
-    border: 1px solid #d0d8e8;
-    border-top: 4px solid #1a3a6e;
-    border-radius: 3px;
-    padding: 8px 9px;
-  }
-
-  .col.perf  { border-top-color: #1a3a6e; }
-  .col.sante { border-top-color: #2a6e1a; }
-  .col.tech  { border-top-color: #6e3a1a; }
-
-  .col-header {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    gap: 13px;
+    padding-bottom: 8px;
     margin-bottom: 7px;
+    border-bottom: 2.5px solid #2869b0;
   }
 
-  .col-header .icon {
+  .logo-wrap {
+    flex-shrink: 0;
+    width: 148px;
+    height: 48px;
+  }
+
+  .logo-wrap svg { display: block; width: 100%; height: 100%; }
+
+  .header-divider {
+    width: 1.5px;
+    height: 46px;
+    background: #d0d8ec;
+    flex-shrink: 0;
+  }
+
+  .header-center { flex: 1; }
+
+  .header-center h1 {
     font-size: 13pt;
-    line-height: 1;
-  }
-
-  .col-header h3 {
-    font-size: 8.5pt;
-    font-weight: 800;
+    font-weight: 900;
+    color: #2869b0;
     text-transform: uppercase;
-    letter-spacing: 0.4px;
-    color: #1a1a2e;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
   }
 
-  .col-header h3 span {
-    display: block;
-    font-weight: 400;
-    font-size: 7pt;
-    text-transform: none;
-    color: #666;
-    letter-spacing: 0;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  ul li {
-    padding: 3.5px 0 3.5px 12px;
-    position: relative;
-    line-height: 1.35;
-    border-bottom: 1px dotted #e0e6f0;
-    color: #222;
-  }
-
-  ul li:last-child { border-bottom: none; }
-
-  ul li::before {
-    content: '›';
-    position: absolute;
-    left: 0;
-    font-weight: 700;
-    color: #1a3a6e;
-  }
-
-  .col.sante ul li::before { color: #2a6e1a; }
-  .col.tech  ul li::before { color: #6e3a1a; }
-
-  li strong {
-    font-weight: 700;
-    color: #1a1a2e;
-  }
-
-  li .warn {
-    font-weight: 700;
+  .header-center h1 em {
+    font-style: normal;
     color: #c0392b;
   }
 
-  li .ok {
-    font-weight: 700;
-    color: #27ae60;
+  .header-center p {
+    font-size: 7.5pt;
+    color: #666;
+    margin-top: 3px;
   }
 
-  /* ── ALERTE BOX ── */
-  .alert-box {
-    background: #fff8e1;
-    border: 1px solid #f0c040;
-    border-left: 4px solid #e67e22;
-    border-radius: 3px;
-    padding: 6px 10px;
-    margin-bottom: 10px;
-    font-size: 7.8pt;
-    color: #5a3e00;
+  .header-right {
+    flex-shrink: 0;
+    text-align: right;
   }
 
-  .alert-box strong { font-weight: 800; }
-
-  /* ── GOLDEN RULES ── */
-  .golden {
-    background: #1a3a6e;
+  .season-badge {
+    display: inline-block;
+    background: #c0392b;
     color: #fff;
-    border-radius: 4px;
-    padding: 8px 12px;
-    margin-bottom: 0;
+    font-size: 7pt;
+    font-weight: 800;
+    padding: 3px 9px;
+    border-radius: 12px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
   }
 
-  .golden h4 {
-    font-size: 8pt;
-    font-weight: 800;
+  .doc-label {
+    display: block;
+    font-size: 6.5pt;
+    font-weight: 700;
+    color: #2869b0;
     text-transform: uppercase;
     letter-spacing: 0.8px;
-    margin-bottom: 6px;
-    border-bottom: 1px solid rgba(255,255,255,0.25);
-    padding-bottom: 4px;
   }
+
+  /* ══ ALERTE ══ */
+  .alert-banner {
+    background: #fff8ed;
+    border-left: 4px solid #e67e22;
+    border-radius: 0 4px 4px 0;
+    padding: 5px 11px;
+    margin-bottom: 8px;
+    font-size: 7.8pt;
+    color: #7a4000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-top: 1px solid #fde8c4;
+    border-right: 1px solid #fde8c4;
+    border-bottom: 1px solid #fde8c4;
+  }
+
+  .alert-banner .aico { font-size: 14pt; flex-shrink: 0; }
+  .alert-banner strong { color: #c0392b; font-weight: 800; }
+
+  /* ══ 3 COLONNES ══ */
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 7px;
+    margin-bottom: 8px;
+  }
+
+  .col { border-radius: 5px; overflow: hidden; border: 1px solid #dde5f2; }
+
+  .col-head {
+    padding: 6px 9px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .col.perf  .col-head { background: #2869b0; }
+  .col.sante .col-head { background: #1c6b3a; }
+  .col.tech  .col-head { background: #6b3a1c; }
+
+  .col-icon { font-size: 15pt; line-height: 1; }
+
+  .col-head-text h3 {
+    font-size: 7.8pt;
+    font-weight: 800;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+  }
+
+  .col-head-text span {
+    font-size: 6.3pt;
+    color: rgba(255,255,255,0.68);
+  }
+
+  ul { list-style: none; }
+
+  ul li {
+    padding: 3.8px 9px;
+    font-size: 7.6pt;
+    line-height: 1.35;
+    border-bottom: 1px solid #edf0f8;
+    color: #222;
+    display: flex;
+    gap: 5px;
+    align-items: flex-start;
+  }
+
+  ul li:last-child { border-bottom: none; }
+  ul li:nth-child(even) { background: #f8fafd; }
+  .col.sante ul li:nth-child(even) { background: #f5faf7; }
+  .col.tech  ul li:nth-child(even) { background: #fdf8f5; }
+
+  ul li::before {
+    content: '›';
+    font-weight: 900;
+    font-size: 10pt;
+    line-height: 1.1;
+    flex-shrink: 0;
+  }
+
+  .col.perf  ul li::before { color: #2869b0; }
+  .col.sante ul li::before { color: #1c6b3a; }
+  .col.tech  ul li::before { color: #6b3a1c; }
+
+  li strong { font-weight: 700; }
+  li .warn  { font-weight: 700; color: #c0392b; }
+  li .ok    { font-weight: 700; color: #1c6b3a; }
+  li em     { font-style: italic; color: #555; }
+
+  /* ══ RÉFLEXES ══ */
+  .golden {
+    background: linear-gradient(135deg, #1a3570 0%, #2869b0 100%);
+    border-radius: 5px;
+    padding: 7px 11px 8px;
+  }
+
+  .golden-head {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 7px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255,255,255,0.18);
+  }
+
+  .golden-head h4 {
+    font-size: 7.5pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+  }
+
+  .gstar { color: #f0c040; font-size: 11pt; line-height: 1; }
 
   .rules-grid {
     display: grid;
@@ -190,142 +215,233 @@
   }
 
   .rule {
-    font-size: 7.2pt;
-    line-height: 1.35;
-    color: #dce6f7;
+    background: rgba(255,255,255,0.08);
+    border-radius: 4px;
+    padding: 5px 7px 6px;
+    border-top: 2px solid rgba(240,192,64,0.5);
+    position: relative;
   }
 
   .rule .num {
-    display: block;
-    font-size: 14pt;
+    position: absolute;
+    top: 4px; right: 6px;
+    font-size: 18pt;
     font-weight: 900;
-    color: rgba(255,255,255,0.18);
+    color: rgba(255,255,255,0.1);
     line-height: 1;
-    margin-bottom: 2px;
   }
 
   .rule strong {
     display: block;
-    font-size: 7.5pt;
-    color: #fff;
-    margin-bottom: 2px;
+    font-size: 7pt;
+    color: #f0c040;
+    font-weight: 800;
+    margin-bottom: 3px;
+    line-height: 1.2;
   }
 
-  /* ── FOOTER ── */
+  .rule p {
+    font-size: 6.4pt;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.4;
+  }
+
+  /* ══ FOOTER ══ */
   footer {
-    margin-top: 7px;
-    text-align: center;
-    font-size: 6.5pt;
-    color: #aaa;
+    margin-top: 6px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 5.8pt;
+    color: #bbb;
+    border-top: 1px solid #e4e9f5;
+    padding-top: 4px;
   }
-
-  footer a { color: #aaa; text-decoration: none; }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
+<!-- ══════ HEADER ══════ -->
 <header>
-  <div class="title-block">
-    <h1>⚠ Consignes de sécurité — Fortes chaleurs</h1>
-    <h2>Pilotes privés &nbsp;·&nbsp; Avions légers &amp; ULM &nbsp;·&nbsp; Été 2026</h2>
+
+  <!-- LOGO SVG AÉRO-CLUB DE BRIVE (recréé fidèlement) -->
+  <div class="logo-wrap">
+    <svg viewBox="0 0 280 88" xmlns="http://www.w3.org/2000/svg" fill="none">
+      <defs>
+        <pattern id="ls" width="3.6" height="3.6" patternUnits="userSpaceOnUse">
+          <line x1="0" y1="1.8" x2="3.6" y2="1.8" stroke="#2869b0" stroke-width="0.75"/>
+        </pattern>
+      </defs>
+
+      <!-- AILE GAUCHE -->
+      <path d="M 122,44
+               C 104,37 76,33 48,34
+               C 26,35 10,41 10,46
+               C 10,51 26,57 48,57
+               C 76,57 104,53 122,46"
+            stroke="#2869b0" stroke-width="1.5" fill="#2869b009"/>
+      <path d="M  98,35 C  95,27  76,24  55,28" stroke="#2869b0" stroke-width="1.1"/>
+      <path d="M 109,37 C 106,29  86,25  63,29" stroke="#2869b0" stroke-width="1.1"/>
+      <path d="M 117,40 C 114,32  95,28  71,32" stroke="#2869b0" stroke-width="1.1"/>
+
+      <!-- AILE DROITE (miroir) -->
+      <path d="M 158,44
+               C 176,37 204,33 232,34
+               C 254,35 270,41 270,46
+               C 270,51 254,57 232,57
+               C 204,57 176,53 158,46"
+            stroke="#2869b0" stroke-width="1.5" fill="#2869b009"/>
+      <path d="M 182,35 C 185,27 204,24 225,28" stroke="#2869b0" stroke-width="1.1"/>
+      <path d="M 171,37 C 174,29 194,25 217,29" stroke="#2869b0" stroke-width="1.1"/>
+      <path d="M 163,40 C 166,32 185,28 209,32" stroke="#2869b0" stroke-width="1.1"/>
+
+      <!-- ÉLÉMENT CENTRAL : deux banderoles croisées -->
+      <g transform="translate(140,45)">
+        <!-- Banderole 1 : inclinée −33° -->
+        <g transform="rotate(-33)">
+          <rect x="-8.5" y="-33" width="17" height="66" rx="2"
+                fill="url(#ls)" stroke="#2869b0" stroke-width="1.4"/>
+        </g>
+        <!-- Banderole 2 : inclinée +33° -->
+        <g transform="rotate(33)">
+          <rect x="-8.5" y="-33" width="17" height="66" rx="2"
+                fill="url(#ls)" stroke="#2869b0" stroke-width="1.4"/>
+        </g>
+        <!-- Texte dans les 4 quadrants -->
+        <text x="-21" y="-15" font-family="Arial" font-size="6.3" font-weight="800"
+              fill="#2869b0" text-anchor="middle">AERO</text>
+        <text x=" 21" y="-15" font-family="Arial" font-size="6.3" font-weight="800"
+              fill="#2869b0" text-anchor="middle">CLUB</text>
+        <text x="-21" y=" 23" font-family="Arial" font-size="6.3" font-weight="800"
+              fill="#2869b0" text-anchor="middle">DE</text>
+        <text x=" 21" y=" 23" font-family="Arial" font-size="6.3" font-weight="800"
+              fill="#2869b0" text-anchor="middle">BRIVE</text>
+      </g>
+    </svg>
   </div>
-  <div class="badge">DOCUMENT<br>SÉCURITÉ VOLS</div>
+
+  <div class="header-divider"></div>
+
+  <div class="header-center">
+    <h1>Consignes sécurité — <em>Fortes chaleurs</em></h1>
+    <p>Pilotes privés &nbsp;·&nbsp; Avions légers &nbsp;·&nbsp; Aérodrome de Brive-Vallée de la Dordogne (LFBV)</p>
+  </div>
+
+  <div class="header-right">
+    <div class="season-badge">Été 2026</div>
+    <span class="doc-label">Sécurité des vols</span>
+  </div>
 </header>
 
-<!-- ALERT -->
-<div class="alert-box">
-  <strong>Entre 11h et 16h par canicule : vol fortement déconseillé.</strong>
-  Volez tôt le matin ou en soirée — thermiques violents, performances dégradées, risques cumulés.
+<!-- ══════ ALERTE ══════ -->
+<div class="alert-banner">
+  <span class="aico">⚠</span>
+  <div>
+    <strong>Entre 11h et 16h par canicule : vol fortement déconseillé.</strong>
+    Thermiques violents, performances dégradées, risque de coup de chaleur — volez tôt le matin ou en soirée.
+  </div>
 </div>
 
-<!-- 3 COLUMNS -->
+<!-- ══════ 3 COLONNES ══════ -->
 <div class="columns">
 
-  <!-- COL 1 : PERFORMANCES -->
+  <!-- PERFORMANCES -->
   <div class="col perf">
-    <div class="col-header">
-      <span class="icon">✈</span>
-      <h3>Performances avion<span>Altitude-densité &amp; moteur</span></h3>
+    <div class="col-head">
+      <span class="col-icon">✈</span>
+      <div class="col-head-text">
+        <h3>Performances avion</h3>
+        <span>Altitude-densité &amp; moteur</span>
+      </div>
     </div>
     <ul>
-      <li><strong>Calculez l'altitude-densité</strong> avant le vol : +10°C au-dessus ISA ≈ <strong>+600 ft</strong> d'altitude-densité.</li>
-      <li>Distance de décollage : <span class="warn">× 1,5 minimum</span> en conditions chaudes. Ne négociez pas avec la piste.</li>
-      <li>Taux de montée : <span class="warn">−20 à −40 %</span>. Anticipez les obstacles en bout de piste.</li>
-      <li>Allégez l'avion : <span class="ok">viser 85–90 % de la MTOW</span>. Ne faites pas le plein complet.</li>
-      <li>Moteur atmo : <strong>appauvrissez le mélange au décollage</strong> si altitude-densité &gt; 3 000 ft (cf. manuel de vol).</li>
-      <li>Météo : consultez les <strong>bulletins Météo-France</strong> (vigilance ⚠ jaune/orange/rouge) et le TEMSI avant chaque départ.</li>
+      <li><strong>Altitude-densité :</strong> +10°C / ISA ≈ <strong>+600 ft.</strong> Calculez-la avant chaque vol.</li>
+      <li>Distance de décollage : <span class="warn">× 1,5 minimum.</span> Ne négociez pas avec la piste.</li>
+      <li>Taux de montée : <span class="warn">−20 à −40 %.</span> Anticipez les obstacles en bout de piste.</li>
+      <li>Allégez : <span class="ok">viser 85–90 % MTOW.</span> Évitez le plein complet sur piste courte.</li>
+      <li>Moteur atmo : <strong>appauvrissez le mélange</strong> si alt-densité &gt; 3 000 ft (cf. manuel).</li>
+      <li>Consultez <strong>TEMSI + vigilance Météo-France</strong> avant le départ. Orages convectifs en quelques heures.</li>
     </ul>
   </div>
 
-  <!-- COL 2 : SANTÉ -->
+  <!-- SANTÉ -->
   <div class="col sante">
-    <div class="col-header">
-      <span class="icon">🧍</span>
-      <h3>Santé du pilote<span>Déshydratation &amp; hyperthermie</span></h3>
+    <div class="col-head">
+      <span class="col-icon">🧍</span>
+      <div class="col-head-text">
+        <h3>Santé du pilote</h3>
+        <span>Déshydratation &amp; hyperthermie</span>
+      </div>
     </div>
     <ul>
-      <li><strong>Hydratation obligatoire :</strong> 500 mL <em>avant</em> le vol + <span class="warn">1 L d'eau par heure</span> de vol. Boire toutes les 20–30 min sans attendre la soif.</li>
-      <li>Déshydratation dès <span class="warn">−2 % du poids</span> en eau : prise de décision dégradée, temps de réaction allongé.</li>
-      <li><strong>Signes du coup de chaleur</strong> (urgence) : peau rouge et sèche, confusion, vertiges, absence de transpiration → <span class="warn">atterrissage immédiat.</span></li>
-      <li>Éviter : alcool (veille &amp; jour J), café en excès, repas lourd avant le vol.</li>
-      <li>S'habiller léger (coton, couleurs claires), casquette, lunettes de soleil. Aérer la cabine avant d'embarquer.</li>
-      <li>Appliquer <strong>I'M SAFE</strong> honnêtement — la chaleur nocturne perturbe le sommeil et affecte les performances dès le lendemain.</li>
+      <li><strong>Hydratation :</strong> 500 mL <em>avant</em> le vol + <span class="warn">1 L/heure</span> en vol. Boire toutes les 20–30 min.</li>
+      <li>Dès <span class="warn">−2 % du poids en eau</span> : décisions et réflexes dégradés — sans s'en rendre compte.</li>
+      <li><strong>Coup de chaleur (urgence) :</strong> peau rouge et <em>sèche</em>, confusion, vertiges → <span class="warn">atterrissage immédiat.</span></li>
+      <li>Éviter : alcool (veille &amp; matin), café en excès, repas lourd avant le vol.</li>
+      <li>Vêtements légers et clairs, casquette, lunettes. <strong>Aérez la cabine</strong> avant d'embarquer.</li>
+      <li>Appliquer <strong>I'M SAFE</strong> — chaleur nocturne = mauvaise nuit = performances altérées le lendemain.</li>
     </ul>
   </div>
 
-  <!-- COL 3 : TABLETTES -->
+  <!-- TABLETTES -->
   <div class="col tech">
-    <div class="col-header">
-      <span class="icon">📱</span>
-      <h3>iPad &amp; tablettes EFB<span>Surchauffe &amp; panne en vol</span></h3>
+    <div class="col-head">
+      <span class="col-icon">📱</span>
+      <div class="col-head-text">
+        <h3>iPad &amp; tablettes EFB</h3>
+        <span>Surchauffe &amp; panne en vol</span>
+      </div>
     </div>
     <ul>
-      <li>Limite opérationnelle Apple/Android : <span class="warn">0 à 35°C</span>. Un cockpit fermé au soleil atteint <strong>60–80°C</strong> en stationnement.</li>
-      <li><strong>Ne jamais laisser l'appareil dans l'avion</strong> fermé au soleil — dommages définitifs de batterie garantis.</li>
-      <li>En vol : monter l'iPad côté <span class="ok">ombragé</span> du cockpit, éviter le tableau de bord (surface chaude + rayonnement).</li>
-      <li>Ne pas charger en vol si la température est déjà élevée — la charge génère de la chaleur supplémentaire.</li>
-      <li>Message <em>"Température — appareil a besoin de se refroidir"</em> = <span class="warn">extinction imminente.</span></li>
-      <li><strong>Backup obligatoire :</strong> carte papier de la région + trajet mémorisé + fréquences radio notées. Un EFB n'est pas un instrument certifié.</li>
+      <li>Limite Apple/Android : <span class="warn">0–35°C.</span> Cockpit fermé au soleil → <strong>60–80°C.</strong></li>
+      <li><strong>Ne jamais laisser l'appareil dans l'avion</strong> au soleil — dommages définitifs de batterie.</li>
+      <li>En vol : côté <span class="ok">ombragé</span> du cockpit. Éviter le tableau de bord (rayonnement direct).</li>
+      <li>Ne pas charger en vol par forte chaleur — la charge ajoute de la chaleur interne.</li>
+      <li>Message <em>"Température — se refroidir"</em> = <span class="warn">extinction sans avertissement.</span></li>
+      <li><strong>Backup obligatoire :</strong> carte papier + fréquences notées. L'EFB n'est pas un instrument certifié.</li>
     </ul>
   </div>
 
 </div>
 
-<!-- GOLDEN RULES -->
+<!-- ══════ 5 RÉFLEXES ══════ -->
 <div class="golden">
-  <h4>★ Les 5 réflexes essentiels</h4>
+  <div class="golden-head">
+    <span class="gstar">★</span>
+    <h4>Les 5 réflexes essentiels par forte chaleur</h4>
+  </div>
   <div class="rules-grid">
     <div class="rule">
       <span class="num">1</span>
       <strong>Volez tôt ou tard</strong>
-      Avant 10h ou après 18h. Entre 11h–16h : report ou annulation.
+      <p>Avant 10h ou après 18h. Entre 11h–16h : report ou annulation.</p>
     </div>
     <div class="rule">
       <span class="num">2</span>
       <strong>Calculez les performances</strong>
-      Altitude-densité + tableaux du manuel à la température réelle du jour.
+      <p>Altitude-densité + tableaux du manuel à la température réelle.</p>
     </div>
     <div class="rule">
       <span class="num">3</span>
       <strong>Allégez &amp; rallongez</strong>
-      Moins de carburant / masse, piste × 1,5 minimum.
+      <p>Moins de carburant et de masse. Distance décollage × 1,5 min.</p>
     </div>
     <div class="rule">
       <span class="num">4</span>
       <strong>Hydratez-vous</strong>
-      1 L/heure en vol. Toute fatigue ou maux de tête = posez l'avion.
+      <p>1 L/heure en vol. Fatigue ou maux de tête = posez l'avion.</p>
     </div>
     <div class="rule">
       <span class="num">5</span>
       <strong>Backup papier</strong>
-      Votre tablette peut s'éteindre. Ayez toujours carte &amp; fréquences notées.
+      <p>Votre tablette peut s'éteindre. Carte et fréquences toujours notées.</p>
     </div>
   </div>
 </div>
 
+<!-- ══════ FOOTER ══════ -->
 <footer>
-  Sources : FFPLUM Flash Sécurité Chaleurs · FFA Mémo Pilote VFR 2025-2026 · FAA P-8740-02 Density Altitude · AOPA · SKYbrary · iPad Pilot News
+  <span>Sources : FFPLUM Flash Sécurité Chaleurs · FFA Mémo Pilote VFR 2025-2026 · FAA P-8740-02 · AOPA · SKYbrary · iPad Pilot News</span>
+  <span>Aéro-Club de Brive — LFBV — Été 2026</span>
 </footer>
 
 </body>
