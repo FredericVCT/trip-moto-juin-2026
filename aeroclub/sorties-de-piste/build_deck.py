@@ -236,11 +236,11 @@ def case_slide(title, ident, chrono, factors, lesson):
     return s
 
 
-def definition_slide(title, definition, cards):
+def definition_slide(title, definition, cards, def_size=20):
     s = content_slide(title)
     rect(s, 0.7, 1.50, 11.9, 1.75, LSKY)
     rect(s, 0.7, 1.50, 0.12, 1.75, SKY)
-    txt(s, definition, 1.1, 1.70, 11.2, 1.4, 20, color=NAVY, font="Calibri Light",
+    txt(s, definition, 1.1, 1.60, 11.2, 1.55, def_size, color=NAVY, font="Calibri Light",
         anchor=MSO_ANCHOR.MIDDLE)
     xs = [0.70, 4.75, 8.80]
     for (head, body, col), x in zip(cards, xs):
@@ -394,8 +394,8 @@ s = case_slide("Cas 2 · DA40 à La Grand'Combe",
                 "Rebond sur une bosse de la piste.",
                 "Sortie longitudinale, l'avion s'immobilise en contrebas."],
                ["Terrain « complexe » selon le BEA : relief, turbulence, piste bosselée",
-                "Avion à aile lisse, peu tolérant à l'excès de vitesse",
-                "La première remise de gaz avait consommé une partie de l'attention",
+                "Expérience récente limitée, DA40 jugé « très exigeant » par le pilote",
+                "Dernier posé sur ce terrain : cinq ans plus tôt, en DR400",
                 "Après le rebond, le pilote poursuit"],
                "Après un rebond franc, remise de gaz immédiate. Le second toucher risque un nouveau rebond, et la piste restante diminue très vite.")
 notes(s, "Rapport BEA « Approche non stabilisée, atterrissage long, rebond, sortie longitudinale de piste ». "
@@ -428,7 +428,7 @@ bullets(s, [
     ("Circuit contraint ou raccourci",
      ["Éviter une ferme, gagner du temps, suivre un autre avion : la finale devient trop courte pour stabiliser."]),
     ("Vent mal évalué",
-     ["Manche à air non surveillée, approche à contre-QFU par vent « calme », composante arrière acceptée."]),
+     ["Manche à air non surveillée, composante arrière acceptée. Un DR-360 posé à contre-QFU, haut et vite en finale : sortie longitudinale, avion lourdement endommagé."]),
     ("Syndrome de précipitation",
      ["Un souci banal est traité comme une urgence : on veut « faire vite » et on supprime les marges."]),
     ("Surface et pente non intégrées",
@@ -452,6 +452,20 @@ s = definition_slide("Le syndrome de précipitation",
                                    "la seule chose qui permet de stabiliser : la distance en finale.", AMBER)])
 notes(s, "Notion reprise du volet 2 d'aeroVFR. La verrière ouverte au décollage est l'exemple classique : l'avion vole, "
          "il faut juste faire un tour de piste normal.")
+
+# 13b. Préparer un terrain : Barcelonnette
+s = definition_slide("Préparer un terrain : l'exemple de Barcelonnette",
+                     "« Pour un terrain peu ou pas pratiqué récemment, surtout avec une piste courte ou limitative, "
+                     "la préparation se fait bien avant le décollage : analyse de la VAC, topographie sur Google Earth, "
+                     "lecture des consignes particulières qui annoncent une turbulence par certains vents ou une piste en pente. »",
+                     [("Ce que dit la VAC", "En été, vent calme le matin, brise forte l'après-midi. Piste 27 alors obligatoire, "
+                                            "avec forte turbulence et rabattants possibles en courte finale.", SKY),
+                      ("Ce que dit le relief", "Piste bombée dans le sens longitudinal : l'autre extrémité n'est pas visible "
+                                               "depuis le seuil. La distance disponible est trompeuse à l'œil.", AMBER),
+                      ("Ce que je décide", "Toucher visé dans le premier quart montant, pour compenser la partie "
+                                           "descendante de la seconde moitié. Arriver le matin, ou renoncer si la brise est établie.", GREEN)], def_size=17)
+notes(s, "Exemple développé dans le volet 2 d'aeroVFR. À remplacer ou compléter par un terrain que le club fréquente réellement, "
+         "avec sa VAC projetée à l'écran.")
 
 # 14. Chiffres : la physique
 s = keyfigures_slide("La physique ne négocie pas", [
@@ -558,9 +572,11 @@ bullets(s, [
     ("Rapports BEA",
      ["F-GOOF, DR400, Pressignac (24), 14 juin 2023, BEA2023-0218",
       "DA40, La Grand'Combe : « Approche non stabilisée, atterrissage long, rebond, sortie longitudinale de piste »",
-      "F-BXZG, Reims-Cessna F150M, Fumel-Montayral (47), 29 juin 2014"]),
+      "F-BXZG, Reims-Cessna F150M, Fumel-Montayral (47), 29 juin 2014",
+      "Cas cités par aeroVFR sans référence : DR-360 posé à contre-QFU ; atterrissage long sur 685 m d'herbe mouillée"]),
     ("Doctrine",
      ["aeroVFR, « Pour éviter les sorties longitudinales à l'atterrissage » (2015) ; « Finale non stabilisée, prise de décision et remise de gaz » (2023) ; « La menace des circuits contraints » (2025)",
+      "aeroVFR, « Ne pas faire brouette à l'atterrissage » (2026), sur le freinage et la roulette de nez",
       "DGAC, Guide de transition « Approche stabilisée »",
       "DSAC, Symposium sécurité 2023 « Prévenir les sorties de piste » ; BEA, étude sorties de piste en aviation générale (2006)"]),
 ], 0.6, 1.30, 11.9, 5.6, size=17, sub_size=13, space=6)
