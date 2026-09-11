@@ -50,14 +50,14 @@
 
 ### Itinéraire complet (4 motos)
 - **Tracé :** Lascelle → Vic-sur-Cère → Murat → Col de Prat de Bouc → Brezons → Pierrefort → Chaudes-Aigues → Gorges de la Truyère (D13) → Viaduc de Garabit → Mur-de-Barrez → Laguiole
-- **Distance :** 229 km / ~4h de route
+- **Distance :** 237,6 km / ~4h de route
 - **Départ :** 9h00 → **Arrivée :** ~17h00
 - **Altitude :** 643m → 1 246m
 
 ### Matin (~2h10)
 - **Fichier :** `J2/J2_Lascelle_Laguiole_v2.gpx` ✅ prêt
 - **Tracé :** Lascelle → Murat (D990) → Col de Prat de Bouc (D116) → Vallée de Brezons → Pierrefort → Chaudes-Aigues
-- **Distance :** 134 km / ~2h10
+- **Distance :** 141,4 km / ~2h10
 - **Départ :** 9h00 → **Arrivée Chaudes-Aigues :** ~11h10
 
 ### Déjeuner
@@ -65,7 +65,7 @@
 
 ### Après-midi (~1h45)
 - **Tracé :** Chaudes-Aigues → Gorges de la Truyère D13 → Viaduc de Garabit → Mur-de-Barrez → Laguiole
-- **Distance :** 95 km / ~1h45
+- **Distance :** 96,1 km / ~1h45
 
 ### Bivouac
 - **Lieu :** Laguiole (~1 000m)
@@ -154,6 +154,6 @@
 | J1/J1_Brive_StNectaire.gpx | J1 — Lun. 14 sept. | ✅ Prêt | 192,5 km / 3h28 |
 | J1/J1_Mions_StNectaire.gpx | J1 — Lun. 14 sept. | ✅ Prêt | 239,5 km / 3h02 |
 | J1/J1_APM_StNectaire_LacDesGraves.gpx | J1 — Lun. 14 sept. | ✅ Prêt | 133,5 km / 2h25 |
-| J2/J2_Lascelle_Laguiole_v2.gpx | J2 — Mar. 15 sept. | ✅ Prêt | 229 km / ~4h |
+| J2/J2_Lascelle_Laguiole_v2.gpx | J2 — Mar. 15 sept. | ✅ Prêt | 237,6 km / ~4h |
 | J3/J3_Laguiole_Rodez_track.gpx | J3 — Mer. 16 sept. | ✅ Prêt | 248,7 km / ~4h30 |
 | J4/J4_Rodez_StCyrLaRoche_waypoints.gpx | J4 — Jeu. 17 sept. | ✅ Prêt | 240,4 km / ~4h |
