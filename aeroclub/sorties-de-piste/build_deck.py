@@ -30,6 +30,8 @@ LAMBER = RGBColor(0xFB, 0xF0, 0xDC)
 LRED = RGBColor(0xF7, 0xE1, 0xDE)
 
 FOOTER_TXT = "Formation PPL · LAPL  —  Frédéric Vincenot · FI"
+ASSETS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets")
+VAC_CROP = os.path.join(ASSETS, "vac_lfsl_att_crop.png")
 
 prs = Presentation(TEMPLATE)
 # Purge des slides du template (on garde le master et le thème)
@@ -518,11 +520,45 @@ s = two_col_slide("À 300 ft sol : je continue ou je remets les gaz ?",
 notes(s, "Insister sur la dernière ligne de droite : dans deux des trois cas, le pilote avait déjà remis les gaz une fois, "
          "et n'a pas refait le même choix à la seconde approche.")
 
+# 17b. Notre terrain : la VAC de LFSL
+s = content_slide("Notre terrain : LFSL Brive Vallée de la Dordogne", BGBLUE)
+rect(s, 0.5, 1.35, 8.2, 5.3, WHITE)
+s.shapes.add_picture(VAC_CROP, Inches(0.6), Inches(1.45), Inches(8.0), Inches(8.0 * 635 / 1210))
+txt(s, "Extrait de la VAC AD 2 LFSL ATT 01, AMDT 08/26 en vigueur depuis le 9 juillet 2026, © SIA. "
+       "Prochaine mise à jour AIP le 1er octobre 2026 : revérifier la carte avant la séance.",
+    0.6, 5.68, 8.0, 0.45, 10, color=GRAY2, italic=True)
+rect(s, 0.6, 6.10, 8.0, 0.45, GREEN)
+txt(s, "2 100 m ne dispensent pas d'une zone de toucher : roues au sol dans le premier tiers, sinon remise de gaz.",
+    0.75, 6.10, 7.8, 0.45, 13, True, WHITE, anchor=MSO_ANCHOR.MIDDLE)
+# carte de droite : chiffres
+rect(s, 8.9, 1.35, 3.95, 5.3, WHITE)
+rect(s, 8.9, 1.35, 3.95, 0.55, NAVY)
+txt(s, "LFSL en chiffres", 9.05, 1.40, 3.7, 0.45, 15, True, WHITE, anchor=MSO_ANCHOR.MIDDLE)
+bullets(s, [
+    "ALT 1 016 ft · piste 11/29 · 2 100 × 45 m revêtue",
+    "QFU 113° / 293° · QFU 293° préférentiel (IFR)",
+    "PAPI 3,0° en 11 · PAPI 3,2° en 29",
+    "Tour de piste 2 000 ft (1 000 ft AAL)",
+    "TWR, AFIS et A/A : 121,130",
+], 9.0, 1.95, 3.8, 2.2, size=12, space=3, color=NAVY)
+rect(s, 8.9, 4.20, 3.95, 0.50, AMBER)
+txt(s, "Ce que la VAC nous dit", 9.05, 4.22, 3.7, 0.45, 14, True, WHITE, anchor=MSO_ANCHOR.MIDDLE)
+rect(s, 8.9, 4.70, 3.95, 1.95, LAMBER)
+bullets(s, [
+    "Turbulence possible aux seuils 11 et 29",
+    "Colline dans la surface d'approche du seuil 29",
+    "RWY 29 : virage à gauche au plus tard à 500 ft AAL",
+    "Arrivée en 29 interdite si PAPI hors service",
+], 9.0, 4.75, 3.8, 1.9, size=12, space=3, color=NAVY)
+notes(s, "VAC extraite du mail « Mise à jour carte VAC LFSL » de Thomas Andrieu du 10 juillet 2026 (fichier LFSL_2026_08_vac_en.pdf). "
+         "Le changement principal de cette édition est la fréquence 121,130. Projeter la VAC complète (pages APP et ATT) en complément. "
+         "Discussion : où placer notre repère de remise de gaz en 11 et en 29 ? Par exemple une bretelle ou les hangars, visibles depuis le cockpit.")
+
 # 18. Application locale
 s = content_slide("Application à nos pistes et à nos navigations")
 bullets(s, [
-    ("Nos pistes : longueur, revêtement, pente, repère de remise de gaz",
-     ["[À compléter : pour chaque QFU, un repère visible depuis le cockpit avant lequel les roues doivent être au sol.]"]),
+    ("Notre piste 11/29 : 2 100 m revêtue, PAPI aux deux seuils, turbulence possible aux seuils",
+     ["Repère de remise de gaz à définir ensemble pour chaque QFU : un point visible depuis le cockpit (bretelle, hangars) avant lequel les roues doivent être au sol."]),
     ("Nos terrains de navigation habituels de moins de 800 m",
      ["[À compléter : liste des terrains courts fréquentés par le club, avec leurs particularités VAC.]"]),
     ("Exercice au tableau : distance d'atterrissage majorée",
@@ -574,6 +610,8 @@ bullets(s, [
       "DA40, La Grand'Combe : « Approche non stabilisée, atterrissage long, rebond, sortie longitudinale de piste »",
       "F-BXZG, Reims-Cessna F150M, Fumel-Montayral (47), 29 juin 2014",
       "Cas cités par aeroVFR sans référence : DR-360 posé à contre-QFU ; atterrissage long sur 685 m d'herbe mouillée"]),
+    ("Carte VAC",
+     ["SIA, AD 2 LFSL APP 01 / ATT 01 / TXT 01-02, AMDT 08/26 du 9 juillet 2026"]),
     ("Doctrine",
      ["aeroVFR, « Pour éviter les sorties longitudinales à l'atterrissage » (2015) ; « Finale non stabilisée, prise de décision et remise de gaz » (2023) ; « La menace des circuits contraints » (2025)",
       "aeroVFR, « Ne pas faire brouette à l'atterrissage » (2026), sur le freinage et la roulette de nez",
