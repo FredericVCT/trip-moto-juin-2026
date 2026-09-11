@@ -2,19 +2,19 @@
 
 ## Vue d'ensemble
 
-**Dates :** lundi 22 → jeudi 25 juin 2026
+**Dates :** lundi 14 → jeudi 17 septembre 2026
 **Direction générale :** Lascelle → Aubrac → Millau (sud)
 
 | Jour | Date | Tracé | Statut |
 |------|------|-------|--------|
-| J1 | Lun. 22 juin | Saint-Cyr-la-Roche / Mions → Saint-Nectaire → Lascelle | ✅ Validé |
-| J2 | Mar. 23 juin | Lascelle → Chaudes-Aigues → Garabit → Mur-de-Barrez → Laguiole | ✅ Validé |
-| J3 | Mer. 24 juin | Laguiole → Vallée du Lot → Entraygues → Conques → Bozouls → Rodez | ✅ Validé (248,7 km) |
-| J4 | Jeu. 25 juin | Rodez → Villefranche-de-Rouergue → Figeac → Saint-Céré → Martel → Saint-Cyr-la-Roche | ✅ Validé (240,4 km) |
+| J1 | Lun. 14 sept. | Saint-Cyr-la-Roche / Mions → Saint-Nectaire → Lascelle | ✅ Validé |
+| J2 | Mar. 15 sept. | Lascelle → Chaudes-Aigues → Garabit → Mur-de-Barrez → Laguiole | ✅ Validé |
+| J3 | Mer. 16 sept. | Laguiole → Vallée du Lot → Entraygues → Conques → Bozouls → Rodez | ✅ Validé (248,7 km) |
+| J4 | Jeu. 17 sept. | Rodez → Villefranche-de-Rouergue → Figeac → Saint-Céré → Martel → Saint-Cyr-la-Roche | ✅ Validé (240,4 km) |
 
 ---
 
-## J1 — VALIDÉ — Lundi 22 juin 2026
+## J1 — VALIDÉ — Lundi 14 septembre 2026
 
 ### Groupe Brive (3 motos)
 - **Fichier :** `J1/J1_Brive_StNectaire.gpx` ✅ prêt
@@ -46,7 +46,7 @@
 
 ---
 
-## J2 — VALIDÉ — Mardi 23 juin 2026
+## J2 — VALIDÉ — Mardi 15 septembre 2026
 
 ### Itinéraire complet (4 motos)
 - **Tracé :** Lascelle → Vic-sur-Cère → Murat → Col de Prat de Bouc → Brezons → Pierrefort → Chaudes-Aigues → Gorges de la Truyère (D13) → Viaduc de Garabit → Mur-de-Barrez → Laguiole
@@ -81,7 +81,7 @@
 
 ---
 
-## J3 — VALIDÉ — Mercredi 24 juin 2026
+## J3 — VALIDÉ — Mercredi 16 septembre 2026
 
 ### Itinéraire complet (4 motos)
 - **Tracé :** Laguiole → D19 (descente Aubrac) → Vallée du Lot → Entraygues-sur-Truyère → Conques → Marcillac-Vallon → Salles-la-Source → Bozouls → Rodez
@@ -115,7 +115,7 @@
 
 ---
 
-## J4 — VALIDÉ — Jeudi 25 juin 2026
+## J4 — VALIDÉ — Jeudi 17 septembre 2026
 
 ### Itinéraire complet (4 motos)
 - **Tracé :** Rodez → Villefranche-de-Rouergue → Figeac → Lacapelle-Marival → Saint-Céré → Martel → Saint-Cyr-la-Roche
@@ -151,9 +151,9 @@
 
 | Fichier | Jour | Statut | Distance |
 |---------|------|--------|----------|
-| J1/J1_Brive_StNectaire.gpx | J1 — Lun. 22 juin | ✅ Prêt | 192,5 km / 3h28 |
-| J1/J1_Mions_StNectaire.gpx | J1 — Lun. 22 juin | ✅ Prêt | 239,5 km / 3h02 |
-| J1/J1_APM_StNectaire_LacDesGraves.gpx | J1 — Lun. 22 juin | ✅ Prêt | 133,5 km / 2h25 |
-| J2/J2_Lascelle_Laguiole_v2.gpx | J2 — Mar. 23 juin | ✅ Prêt | 229 km / ~4h |
-| J3/J3_Laguiole_Rodez_track.gpx | J3 — Mer. 24 juin | ✅ Prêt | 248,7 km / ~4h30 |
-| J4/J4_Rodez_StCyrLaRoche_waypoints.gpx | J4 — Jeu. 25 juin | ✅ Prêt | 240,4 km / ~4h |
+| J1/J1_Brive_StNectaire.gpx | J1 — Lun. 14 sept. | ✅ Prêt | 192,5 km / 3h28 |
+| J1/J1_Mions_StNectaire.gpx | J1 — Lun. 14 sept. | ✅ Prêt | 239,5 km / 3h02 |
+| J1/J1_APM_StNectaire_LacDesGraves.gpx | J1 — Lun. 14 sept. | ✅ Prêt | 133,5 km / 2h25 |
+| J2/J2_Lascelle_Laguiole_v2.gpx | J2 — Mar. 15 sept. | ✅ Prêt | 229 km / ~4h |
+| J3/J3_Laguiole_Rodez_track.gpx | J3 — Mer. 16 sept. | ✅ Prêt | 248,7 km / ~4h30 |
+| J4/J4_Rodez_StCyrLaRoche_waypoints.gpx | J4 — Jeu. 17 sept. | ✅ Prêt | 240,4 km / ~4h |
